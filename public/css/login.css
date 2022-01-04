@@ -1,0 +1,12 @@
+.login{
+    margin: 0 auto;
+    
+}
+.rounded {
+    border-radius: 1rem!important;
+}
+.btn-primary{
+    color: #fff;
+    background-color: #942ee7;
+    border-color: #942ee7;
+}

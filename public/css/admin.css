@@ -1,0 +1,10 @@
+body{
+    /* background-color: antiquewhite; */
+}
+.li{
+    display: inline-block;
+    
+}
+.action{
+    margin-left: 1rem;
+}

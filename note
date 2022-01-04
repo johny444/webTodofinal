@@ -1,0 +1,132 @@
+
+// app.get('/users', (req, res) => {
+//     connect.query('select * from user', (error, result) => {
+//         if (error) throw error;
+//         let message = ""
+//         if (result === undefined || result.length == 0) {
+//             message = "user table is empty";
+//         } else {
+//             message = "Successfully";
+//         }
+//         return res.send({ error: true, data: result, message: message })
+//     })
+
+// })
+// //add
+// app.post('/user/add', (req, res) => {
+//     let firstName = req.body.firstName;
+//     let lastName = req.body.lastName;
+//     let birthday = req.body.birthday;
+//     let email = req.body.email;
+//     let password = req.body.password;
+//     let gender = req.body.gender;
+//     let notes = req.body.notes;
+//     if (!firstName || !lastName || !birthday || !email || !password || !gender || !notes) {
+//         return res.status(400).send({ error: true, message: "Please provide user...." });
+
+//     } else {
+//         connect.query('insert into user (firstName,lastName,birthday,email,password,gender,notes) value(?,?,?,?,?,?,?)',
+//             [firstName, lastName, birthday, email, password, gender, notes], (error, result) => {
+//                 if (error) throw error;
+//                 return res.send({ error, data: result, message: "add Success" });
+//             }
+//         );
+//     }
+// });
+// //get by id
+// app.get('/users/:id', (req, res) => {
+//     let id = req.params.id;
+//     if (!id) {
+//         return res.status(400).send({ error: true, message: "please nhap id" });
+
+//     } else {
+//         connect.query("select * from user where id =?", id, (error, result) => {
+//             if (error) throw error;
+//             let message = "";
+//             if (result === undefined || result.length == 0) {
+//                 message = "user is not found";
+//             } else {
+//                 message = "Success"
+//             }
+//             return res.send({ error: false, data: result[0], message: message })
+//         })
+//     }
+
+// })
+
+// //updtae
+// app.put('/users/update', (req, res) => {
+//     let id = req.body.id;
+//     let firstName = req.body.firstName;
+//     let lastName = req.body.lastName;
+//     let birthday = req.body.birthday;
+//     let email = req.body.email;
+//     let password = req.body.password;
+//     let gender = req.body.gender;
+//     let notes = req.body.notes;
+//     if (!id||!firstName || !lastName || !birthday || !email || !password || !gender || !notes) {
+//         return res.status(400).send({ error: true, message: "Please provide user...." });
+
+//     } else {
+//         connect.query('update user set firstName=?,lastName=?,birthday=?,email=?,password=?,gender=?,notes=? where id=?',
+//             [firstName, lastName, birthday, email, password, gender, notes,id], (error, result) => {
+//                 if (error) throw error;
+//                 let message="";
+//                 if(result.changedRows===0){
+//                     message = "user not found or data are same";
+//                 }else{
+//                     message = "user update success";
+//                 }
+
+//                 return res.send({ error, data: result, message: "add Success" });
+//             }
+//         );
+//     }
+// })
+
+// //delete
+// app.delete('/users/delete', (req, res)=>{
+//     let id = req.body.id;
+//     if(!id){
+//         return res.status(400).send({ error: true, message: "please provide id"});
+
+//     }else{
+//         connect.query('delete from user where id=?',[id],(error, result)=>{
+//             if(error) throw error;
+//             let message = "";
+//             if(result.affectedRows===0){
+//                 message = "user not found";
+
+//             }else{
+//                 message = "Success delete";
+//             }
+
+//             return res.send({error: false,data:result,message:message});
+
+//         })
+//     }
+
+// })
+// //delete by id
+// app.delete('/users/delete/(:id)', (req, res)=>{
+//     let id = req.params.id;
+//     if(!id){
+//         return res.status(400).send({ error: true, message: "please provide id"});
+
+//     }else{
+//         connect.query('delete from user where id=?',id,(error, result)=>{
+//             if(error) throw error;
+//             let message = "";
+//             if(result === undefined || result.length == 0){
+//                 message = "user not found";
+
+//             }else{
+//                 message = "Success delete";
+//             }
+
+//             return res.send({error: false,data:result[0],message:message});
+
+//         })
+//     }
+
+// })

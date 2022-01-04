@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body class="container" style="margin-top: 50px;">
+
+    <a href="/users" class="btn btn-info">Back</a>
+    <br><br>
+
+    <div class="card">
+        <div class="card-header">
+            Add Work
+        </div>
+        <div class="card-body">
+            <form action="/users/add" method="post">
+                <div class="form-group">
+                    <label>CREATE:</label>
+                    <input type="date" class="form-control" name="created" value="<%= created %>" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label>title:</label>
+                    <input type="text" class="form-control" name="title" value="<%= title %>" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label>content:</label>
+                    <input type="text" class="form-control" name="content" value="<%= content %>" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label>sendNotification:</label>
+                    <input type="text" class="form-control" name="sendNotification" value="<%= sendNotification %>" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label>remainder_time:</label>
+                    <input type="date" class="form-control" name="remainder_time" value="<%= remainder_time %>" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label>User ID:</label>
+                    <input type="number" class="form-control" name="iduser" value="<%= iduser %>" autocomplete="off">
+                </div>
+              
+                <div class="form-group">
+                    <input type="submit" class="btn btn-info" value="Add">
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
