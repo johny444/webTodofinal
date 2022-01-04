@@ -46,7 +46,7 @@ app.use('/users', UserRouter);
 app.use('/note', NoteRouter);
 app.use('/page', LoginRouter);
 
-const port = 3000
+const port = 3001
 
 app.listen(port, () => {
   console.log(`Node App is running on port ${port}`);
